@@ -19,7 +19,15 @@ def ler_arquivo(arquivo):
     return conteudo_arquivo_tweets_por_linha
 
 
+def gerar_arquivo_com_resultado():
+    f = open('resultado.csv', 'w')
+    f.write('number of RTs,number of Replies,positive score,negative score,net score')
+    f.close()
+
 if __name__ == '__main__':
     tweets = ler_arquivo('project_twitter_data.csv')
     positive_words = ler_arquivo('negative_words.txt')
     negative_words = ler_arquivo('positive_words.txt')
+    resultado = []
+
+    gerar_arquivo_com_resultado(resultado)
